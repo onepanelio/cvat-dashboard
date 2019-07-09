@@ -3,6 +3,7 @@
 ## Import Flows to NodeRed
 Import the flow  `flows.json` to nodered workspace.
 `NoderedMenu --> Import --> Clipboard --> Upload json or paste the content of the file `
+![Import Flows to NodeRed Demo](2019-07-09 21.17.48.gif)
 
 ## Install npm Modules
 1. node-red-contrib-pythonshell `npm install node-red-contrib-pythonshell`
