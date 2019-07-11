@@ -1,8 +1,8 @@
 import subprocess
-import pandas as pd
 import sys
-data=sys.argv[1]
-output = subprocess.run('cd ../input && onepanel download onepanel-demo/datasets/'+data, shell=True, stdout=subprocess.PIPE, 
-                        universal_newlines=True)
 
+data = sys.argv[1]
+output = subprocess.run('cd ../input && onepanel download onepanel-demo/datasets/' + data, shell=True,
+                        stdout=subprocess.PIPE,
+                        universal_newlines=True)
 print(output)
