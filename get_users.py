@@ -5,15 +5,15 @@ import subprocess
 import pandas as pd
 import sys
 
-with open('config.json') as json_file:
+with open('config.json','r') as json_file:
     headers = json.load(json_file)
 
 output = subprocess.run('printenv | grep PATH_PREFIX', shell=True, stdout=subprocess.PIPE,
                         universal_newlines=True)
 
 wrksp = output.stdout[12:]
-url = "https://c.onepanel.io/" + wrksp + "api/v1/users"
-url = "http://c.onepanel.io/onepanel-demo/projects/cvat-public-demo/workspaces/cvat-gpu-4/label/api/v1/users"
+url = "https://c.onepanel.io/" + wrksp + "api/v1/users/1"
+url = "http://c.onepanel.io/onepanel-demo/projects/cvat-public-demo/workspaces/cvat-gpu-4/label/api/v1/users/1"
 payload = ""
 
 response = requests.request("GET", url, data=payload, headers=headers)

@@ -2,7 +2,7 @@ import requests
 from json2html import *
 import json
 import subprocess
-with open('config.json') as json_file:
+with open('config.json','r') as json_file:
     headers = json.load(json_file)
 
 output = subprocess.run('printenv | grep PATH_PREFIX', shell=True, stdout=subprocess.PIPE,

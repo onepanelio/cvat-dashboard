@@ -11,7 +11,7 @@ def dump(task, name):
 
     wrksp = output.stdout[12:]
     url = "https://c.onepanel.io/" + wrksp + "api/v1/tasks/" + str(task) + "/annotations/" + name
-    with open('config.json') as json_file:
+    with open('config.json','r') as json_file:
         headers = json.load(json_file)
     payload = ""
 

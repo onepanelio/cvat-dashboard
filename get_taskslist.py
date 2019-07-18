@@ -6,7 +6,7 @@ import pandas as pd
 import sys
 import json
 
-with open('config.json') as json_file:
+with open('config.json','r') as json_file:
     headers = json.load(json_file)
 
 output = subprocess.run('printenv | grep PATH_PREFIX', shell=True, stdout=subprocess.PIPE,
