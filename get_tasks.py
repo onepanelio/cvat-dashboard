@@ -11,9 +11,9 @@ with open('config.json','r') as json_file:
 
 output = subprocess.run('printenv | grep PATH_PREFIX', shell=True, stdout=subprocess.PIPE,
                         universal_newlines=True)
-wrksp = output.stdout[12:]
+wrksp = output.stdout[12:-2]
 
-url = "https://c.onepanel.io/" + wrksp + "api/v1/tasks"
+url = "https://c.onepanel.io/" + wrksp + "/api/v1/tasks"
 # url = "https://c.onepanel.io/onepanel-demo/projects/cvat-public-demo/workspaces/cvat-gpu-4/label/api/v1/tasks"
 
 payload = ""
@@ -44,5 +44,6 @@ for task in data:
 
 data = json.dumps(tasks)
 formatted_table = json2html.convert(json=data)
-
+if formatted_table=='':
+    formatted_table = json2html.convert(json={"Error":"No Active Tasks"})
 print(formatted_table)
