@@ -9,8 +9,8 @@ def dump(task, name):
     output = subprocess.run('printenv | grep PATH_PREFIX', shell=True, stdout=subprocess.PIPE,
                             universal_newlines=True)
 
-    wrksp = output.stdout[12:]
-    url = "https://c.onepanel.io/" + wrksp + "api/v1/tasks/" + str(task) + "/annotations/" + name
+    wrksp = output.stdout[12:-2]
+    url = "https://c.onepanel.io/" + wrksp + "/api/v1/tasks/" + str(task) + "/annotations/" + name
     with open('config.json','r') as json_file:
         headers = json.load(json_file)
     payload = ""

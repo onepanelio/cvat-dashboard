@@ -20,5 +20,5 @@ def process():
         'cd /onepanel/output/cvat/data/' + dataset + ' && onepanel datasets init -n ' + pushd + ' && onepanel push -y',
         shell=True))
 
-
-process()
+if __name__ == "__main__":
+    process()
